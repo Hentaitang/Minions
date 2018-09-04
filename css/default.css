@@ -3,301 +3,74 @@
 *::after{padding: 0; margin: 0;}
 li{list-style: none;}
 body{padding: 15px;height: 100vh;}
+a{
+    color: black;
+    background-color: white;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 1px rgba(50, 50, 50, 0.3);
+}
 .token.selector,.token.property,.token.function,.token.punctuation,.token.comment{color: black;}
 #pre{overflow: auto;width: 100%;height: 100%;}
 .wrapper{position: fixed;top: 15px;right: 15px;width: 65%;height: 96vh;display: flex;justify-content: center;align-items: center;}
-.Minions{height: 404px;width: 100%;position: relative;}
+.allBody{width: 300px; height: 404px;position: relative;}
+.Minions{height: 404px;width: 100%;position: absolute;}
 .body{position: absolute;top: 0;left: 50%;transform: translateX(-50%);}
 .frame{position: absolute;top: 98px;left: 50%;transform: translateX(-50%);}
 .frame::after{content: '';display: block;position: absolute;top: 12px;left: 50%;transform: translateX(-50%);}
 .frameLeft,.frameRight{position: absolute;top: 55px;}
 .frameLeft{right: 50%;transform: translateX(4px);}
 .frameRight{left: 50%;transform: translateX(-4px);}
-
-.eyeLeft,
-.eyeRight{
-    position: absolute;
-    top: 77px;
-}
-
-.eyeLeft{
-    right: 50%;
-    transform: translateX(-9px);
-}
-
-.eyeRight{
-    left: 50%;
-    transform: translateX(9px);
-}
-  
-.eyeLeft > .eye1{
-    position: absolute;
-    top: 20px;
-    left: 35px;
-}
-  
-.eyeRight > .eye2{
-    position: absolute;
-    top: 20px;
-    right: 35px;
-}
-  
-.eyeLeft > .eye1:before,
-.eyeRight > .eye2:before{
-    content: '';
-    display: block;
-    position: absolute;
-    left: 8px;
-    top: 8px;
-}
-  
-.eyeLeft > .eye1:after,
-.eyeRight > .eye2:after{
-    content: '';
-    display: block;
-    position: absolute;
-    left: 12px;
-    top: 6px;
-}
-  
-.mouth{
-    position: absolute;
-    top: 185px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-  
-.topLip{
-    position: absolute;
-    top: 165px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-  
-.teeth{
-    width: 84px;
-    height: 30px;
-    position: absolute;
-    top: 180px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-}
-
-.jeanTop{
-    position: absolute;
-    top: 242px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-  
-.jeanLow{
-    position: absolute;
-    top: 300px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-  
-.strapLeft{
-    position: absolute;
-    top: 254px;
-    right: 50%;
-}
-  
-.strapRight{
-    position: absolute;
-    top: 254px;
-    left: 50%;
-}
-  
-.strapLeft:after,
-.strapRight:after{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 3px;
-}
-  
-.strapLeft:after{
-    right: 3px;
-}
-  
-.strapRight:after{
-    left: 3px;
-}
-  
-.jeanLow:after{
-    content: '';
-    display: block;
-    position: absolute;
-    top: -19px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-  
-.handLeft,
-.handRight{
-    position: absolute;
-    top: 243px;
-}
-  
-.handLeft{
-    right: 50%;
-}
-  
-.handRight{
-    left: 50%;
-}
-  
-.handLeft:before,
-.handRight:before{
-    content: '';
-    display: block;
-    border: 18px solid transparent;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-  
-.handLeft:after,
-.handRight:after{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-  
-.fingerLeft,
-.fingerRight{
-    position: absolute;
-    top: 349px;
-}
-  
-.fingerLeft{
-    right: 50%;
-    transform: translateX(-103px);
-}
-  
-.fingerRight{
-    left: 50%;
-    transform: translateX(103px);
-}
-  
-.fingerLeft:before,
-.fingerRight:before{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 8px;
-}
-  
-.fingerLeft:before{
-    left: 6px;
-}
-  
-.fingerRight:before{
-    left: -6px;
-}
-  
-.fingerLeft:after,
-.fingerRight:after{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 17px;
-}
-  
-.fingerLeft:after{
-    left: 2px;
-}
-  
-.fingerRight:after{
-    left: -2px;
-}
-  
-.legLeft,
-.legRight{
-    position: absolute;
-    top: 363px;
-}
-  
-.legLeft{
-    right: 50%;
-    transform: translateX(-5px);
-}
-  
-.legRight{
-    left: 50%;
-    transform: translateX(5px);
-}
-  
-.legLeft:after,
-.legRight:after{
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
-    position: absolute;
-}
-  
-.legLeft:after{
-    left: 0;
-}
-  
-.legRight:after{
-    right: 0;
-}
-  
-.shoeLeft,
-.shoeRight{
-    position: absolute;
-    top: 380px; 
-}
-  
-.shoeLeft{
-    right: 50%;
-    transform: translateX(-7px);
-}
-  
-.shoeRight{
-    left: 50%;
-    transform: translateX(7px);
-}
-  
-.shoeLeft:before,
-.shoeRight:before{
-    content: '';
-    display: block;
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    top: 0;
-}
-  
-.shoeLeft:before{
-    right: 0;
-}
-  
-.shoeRight:before{
-    left: 0;
-}
-  
-.shoeLeft:after,
-.shoeRight:after{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 100%;
-}
-  
-.shoeLeft:after{
-    left: -2px;
-}
-  
-.shoeRight:after{
-    right: -2px;
-}
+.eyeLeft,.eyeRight{position: absolute;top: 77px;}
+.eyeLeft{right: 50%;transform: translateX(-9px);}
+.eyeRight{left: 50%;transform: translateX(9px);}
+.eye1{position: absolute;top: 98px;left: 99px;}
+.eye2{position: absolute;top: 98px;right: 99px;}
+.eye1:before,.eye2:before{content: '';display: block;position: absolute;left: 8px;top: 8px;}
+.eye1:after,.eye2:after{content: '';display: block;position: absolute;left: 12px;top: 6px;}
+.mouth{position: absolute;top: 185px;left: 50%;transform: translateX(-50%);}  
+.topLip{position: absolute;top: 165px;left: 50%;transform: translateX(-50%);} 
+.teeth{width: 84px;height: 30px;position: absolute;top: 180px;left: 50%;transform: translateX(-50%);display: flex;justify-content: center;}
+.teeth > li:nth-child(2){transform: rotate(5deg);}
+.teeth > li:nth-child(3){transform: rotate(-5deg);}
+.jeanTop{position: absolute;top: 242px;left: 50%;transform: translateX(-50%);}
+.jeanLow{position: absolute;top: 300px;left: 50%;transform: translateX(-50%);}
+.strapLeft{position: absolute;top: 254px;right: 50%;}
+.strapRight{position: absolute;top: 254px;left: 50%;}
+.strapLeft:after,.strapRight:after{content: '';display: block;position: absolute;top: 3px;}
+.strapLeft:after{right: 3px;}
+.strapRight:after{left: 3px;}
+.jeanLow:after{content: '';display: block;position: absolute;top: -19px;left: 50%;transform: translateX(-50%);}
+.handLeft,.handRight{position: absolute;top: 243px;}
+.handLeft{right: 50%;}
+.handRight{left: 50%;}
+.handLeft:before,.handRight:before{content: '';display: block;border: 18px solid transparent;position: absolute;top: 100%;left: 50%;transform: translateX(-50%);}
+.handLeft:after,.handRight:after{content: '';display: block;position: absolute;top: 100%;left: 50%;transform: translateX(-50%);}
+.fingerLeft,.fingerRight{position: absolute;top: 349px;}
+.fingerLeft{right: 50%;transform: translateX(-103px);}
+.fingerRight{left: 50%;transform: translateX(103px);}
+.fingerLeft:before,.fingerRight:before{content: '';display: block;position: absolute;top: 8px;}
+.fingerLeft:before{left: 6px;}
+.fingerRight:before{left: -6px;}
+.fingerLeft:after,.fingerRight:after{content: '';display: block;position: absolute;top: 17px;}
+.fingerLeft:after{left: 2px;}
+.fingerRight:after{left: -2px;}
+.legLeft,.legRight{position: absolute;top: 363px;}
+.legLeft{right: 50%;transform: translateX(-5px);}
+.legRight{left: 50%;transform: translateX(5px);}
+.legLeft:after,.legRight:after{content: '';display: block;width: 0;height: 0;position: absolute;}
+.legLeft:after{left: 0;}
+.legRight:after{right: 0;}
+.shoeLeft,.shoeRight{position: absolute;top: 380px; }
+.shoeLeft{right: 50%;transform: translateX(-7px);}
+.shoeRight{left: 50%;transform: translateX(7px);}
+.shoeLeft:before,.shoeRight:before{content: '';display: block;width: 0px;height: 0px;position: absolute;top: 0;}
+.shoeLeft:before{right: 0;}
+.shoeRight:before{left: 0;}
+.shoeLeft:after,.shoeRight:after{content: '';display: block;position: absolute;top: 100%;}
+.shoeLeft:after{left: -2px;}
+.shoeRight:after{right: -2px;}
+.buttons{position: fixed;left: 60px;bottom: 10px;}
+.buttons>button{margin: 0 10px;padding: 5px;}
+.buttons > button.active{box-shadow: 1px 1px 1px 0 rgba(50, 50, 50, 0.5); }

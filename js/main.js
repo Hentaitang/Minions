@@ -1,4 +1,5 @@
-result=`/*
+!function(){
+    result=`/*
 * 你好呀朋友
 * 我将以动画的形式画一个小黄人给你看
 * 直接给你看我画好的就太无聊了
@@ -9,15 +10,14 @@ result=`/*
 *{
    transition: all 1s;
 }
-
 html{
    background: rgb(222,222,222);
 }
-
 #pre{
    background-color: #EEEEEE;
    border: 1px solid #AAAAAA;
    padding: 15px;
+   height: 90vh;
 }
 
 
@@ -28,19 +28,15 @@ html{
 .token.comment{
     color: slategray;
 }
-
 .token.selector{
     color: #690;
 }
-
 .token.punctuation {
     color: #999;
 }
-
 .token.property{
     color: #905;
 }
-
 .token.function{
     color: #DD4A68;
 }
@@ -50,7 +46,7 @@ html{
 
 #pre{
     width: 30%;
-    height: 90vh;
+
 }
 
 /* 准备一张纸 */
@@ -99,24 +95,24 @@ html{
     border-radius: 50px/50px;
 }
   
-.eyeLeft > .eye1,
-.eyeRight > .eye2{
+.eye1,
+.eye2{
     width: 28px;
     height: 28px;
     background-color: #724c25;
     border-radius: 50%;
 }
   
-.eyeLeft > .eye1:before,
-.eyeRight > .eye2:before{
+.eye1:before,
+.eye2:before{
     width: 12px;
     height: 12px;
     background-color: #2C2D2F;
     border-radius: 50%;
 }
   
-.eyeLeft > .eye1:after,
-.eyeRight > .eye2:after{
+.eye1:after,
+.eye2:after{
     width: 8px;
     height: 8px;
     background-color: #FFF;
@@ -149,13 +145,7 @@ html{
     transform: rotate(10deg);
     transform: translateY(-5px);
 }
-  
-.teeth > li:nth-child(2){
-    transform: rotate(5deg);
-}
-.teeth > li:nth-child(3){
-    transform: rotate(-5deg);
-}
+
 .teeth > li:nth-child(4){
     transform: rotate(-10deg);
     transform: translateY(-5px);
@@ -314,21 +304,42 @@ html{
 }
 `
 
-writeCode('', result)
+    writeCode('', result)
 
-function writeCode(prefix, code, callback){
-    var n = 0
-    var preCode = prefix || ''
-    var pre = document.querySelector('#pre')
-    var styleTag = document.querySelector('#styleTag')
-    var id = setInterval(()=>{
-        n += 1
-        pre.innerHTML = Prism.highlight(preCode + code.slice(0, n), Prism.languages.css, 'css')
-        styleTag.innerHTML = preCode + code.slice(0,n)
-        pre.scrollTop = pre.scrollHeight
-        if(n >= code.length){
-            window.clearInterval(id)
-            callback && callback()
+    var duration = 50
+    function writeCode(prefix, code, callback){
+        var n = 0
+        var preCode = prefix || ''
+        var pre = document.querySelector('#pre')
+        var styleTag = document.querySelector('#styleTag')
+        var id = setTimeout(function fn(){
+            n += 1
+            // pre.innerHTML = preCode + code.slice(0, n)
+            pre.innerHTML = Prism.highlight(preCode + code.slice(0, n), Prism.languages.css, 'css')
+            styleTag.innerHTML = preCode + code.slice(0,n)
+            pre.scrollTop = pre.scrollHeight
+            if(n < result.length){
+                setTimeout(fn, duration)
+            }else{
+                callback && callback()
+            }
+        }, duration)
+    }
+
+    $('#buttons').on('click', 'button', (e)=>{
+        let $button = $(e.currentTarget)
+        $button.addClass('active').siblings().removeClass('active')
+        let speed = $button.attr('data-speed')
+        switch (speed){
+            case 'slow':
+                duration = 100;
+                break;
+            case 'normal':
+                duration = 50;
+                break;
+            case 'high':
+                duration = 0;
+                break;
         }
-    },0)
-}
+    })
+}.call()

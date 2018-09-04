@@ -10,41 +10,50 @@
     <title>画一个小黄人</title>
 </head>
 <body>
-    <pre id="pre"></pre>
-    <div id="wrapper" class="wrapper">
-        <div class="Minions">
-            <div class="body"></div>
-            <div class="frame"></div>
-            <div class="frameRight"></div>
-            <div class="frameLeft"></div>
-            <div class="eyeLeft">
-                <div class="eye1"></div>
-            </div>
-            <div class="eyeRight">
-                <div class="eye2"></div>
-            </div>
-            <div class="mouth"></div>
-            <ul class="teeth">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <div class="topLip"></div>
-            <div class="jeanTop"></div>
-            <div class="jeanLow"></div>
-            <div class="strapLeft"></div>
-            <div class="strapRight"></div>
-            <div class="fingerLeft"></div>
-            <div class="fingerRight"></div>
-            <div class="handLeft"></div>
-            <div class="handRight"></div>
-            <div class="legLeft"></div>
-            <div class="legRight"></div>
-            <div class="shoeLeft"></div>
-            <div class="shoeRight"></div>
+    <div class="Code">
+        <pre id="pre"></pre>
+        <div id="buttons" class="buttons">
+            <button data-speed="slow">慢速</button>
+            <button data-speed="normal" class="active">常速</button>
+            <button data-speed="high">高速</button>
+            <a href="./next.html">惊喜</a>
         </div>
     </div>
+    <div id="wrapper" class="wrapper">
+        <div id="allBody" class="allBody">
+            <div class="Minions">
+                <div class="body"></div>
+                <div class="frame"></div>
+                <div class="frameRight"></div>
+                <div class="frameLeft"></div>
+                <div class="eyeLeft"></div>
+                <div class="eyeRight"></div>
+                <div class="mouth"></div>
+                <ul class="teeth">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="topLip"></div>
+                <div class="jeanTop"></div>
+                <div class="jeanLow"></div>
+                <div class="strapLeft"></div>
+                <div class="strapRight"></div>
+                <div class="fingerLeft"></div>
+                <div class="fingerRight"></div>
+                <div class="handLeft"></div>
+                <div class="handRight"></div>
+                <div class="legLeft"></div>
+                <div class="legRight"></div>
+                <div class="shoeLeft"></div>
+                <div class="shoeRight"></div>
+            </div>
+            <div id="eye1" class="eye1"></div>
+            <div id="eye2" class="eye2"></div>
+        </div>
+    </div>
+    <script src="vendor/jquery.min.js"></script>
     <script src="vendor/prism.js"></script>
     <script src='js/main.js'></script>
 </body>
